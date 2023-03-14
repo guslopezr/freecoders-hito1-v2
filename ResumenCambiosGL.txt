@@ -1,0 +1,8 @@
+
+>>Formulario Login:
+Se añade direccionamiento a /crearperil al hacer click en "registrarse".
+
+>>Formulario CrearPerfil: 
+Validación: Campo nombre y apellido no pueden estar vacíos
+Campo contraseña debe tener entre 4 y 10 caracteres
+Campo contraseña 2 debe ser igual a campo 1.
