@@ -17,4 +17,4 @@ De ser el caso, recomendamos instalarla descargándola desde este link: https://
 
 
 ### Acceso a repositorio
-https://proyecto-freecoders-hito1.netlify.app/
+https://proyecto-freecoders-hito1-v2.netlify.app/
