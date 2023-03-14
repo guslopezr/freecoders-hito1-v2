@@ -17,7 +17,7 @@ function AbonarPropuesta1() {
       <br />
       <h1>¡Felicitaciones {client}!</h1>
       <br />
-      <p>Has sido aceptado por nuestro Freecoder {name}.</p>
+      <p>Has aceptado la propuesta de nuetro Freecoder {name}.</p>
       <br />
       <h2>Sólo falta un paso más </h2>
       <br />
