@@ -18,20 +18,31 @@ export default function CrearOfertaValor() {
     }
   };
 
-  const handleImageUpload = (event) => {
-    const inputURL = event.target.value;
-    setImageURL(inputURL);
-  };
 
-  const handleSubmit = (event) => {
+
+ const handleImageUpload = (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const imageURL = URL.createObjectURL(file);
+    setImageURL(imageURL);
+    document.getElementById('submit-button').disabled = false;
+  } else {
+    setImageURL('');
+    document.getElementById('submit-button').disabled = true;
+    setErrorMessage('Por favor selecciona una imagen.');
+    alert('Por favor selecciona una imagen.');
+  }
+};
+
+   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(text, imageURL);
     // Your code to handle form submission goes here
-  };
+  };   
 
   return (
     <div className="maincontainer">
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} >
         <Form.Group controlId="formFreeText">
           <Form.Label>
             Agrega tu oferta de valor, un resumen de lo que te destaca{" "}
@@ -53,23 +64,22 @@ export default function CrearOfertaValor() {
         </Form.Group>
         <br />
 
-        <Form.Group controlId="formImageURL">
-          <Form.Label>Sube una URL con una imagen para tu perfil</Form.Label>
-          <Form.Control
-            type="url"
-            required
-            placeholder="https://example.com/image.jpg"
-            value={imageURL}
+        <div className="maincontainer" controlId="formImageUpload">
+          <Form.Label>Sube una imagen para presentarla en tu perfil de Freecoder</Form.Label>
+          <br />
+          <br />
+          <input
+            type="file"
+            accept=".png, .jpg, .jpeg, .bmp, .gif, .tiff"
             onChange={handleImageUpload}
+            required
           />
-        </Form.Group>
-
-        <Button variant="primary" type="submit" className="consolas-font">
+        </div>
+ <br />
+        <Button variant="primary" type="submit" className="consolas-font" id="submit-button" disabled={!imageURL} >
           Guardar Oferta de Valor
         </Button>
       </Form>
     </div>
   );
 }
-
-

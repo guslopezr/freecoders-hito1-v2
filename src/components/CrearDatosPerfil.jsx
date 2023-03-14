@@ -97,17 +97,6 @@ export default function CrearDatosPerfil() {
         </Form>
         <br />
 
-        <Form.Group controlId="formUrl">
-          <Form.Label>Ingresa una URL para mostrar foto de perfil</Form.Label>
-          <br />
-          <Form.Control
-            type="url"
-            placeholder="URL foto perfil"
-            required
-            aria-label="Campo obligatorio: URL"
-          />
-        </Form.Group>
-        <br />
 
         <Form.Group controlId="formUrl">
           <Form.Label>Perfil de Linkedin</Form.Label>
