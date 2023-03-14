@@ -12,12 +12,11 @@ function CrearPropInicio() {
   }, []);
 
   return (
-    <div className='maincontainer' >
-      <h2>Hola Freecoder "{name}"</h2>
+    <div className='maincontainer'>
+      <h2>Hola Freecoder <span style={{ fontWeight: 'bold', color: 'blue' }}>{name}</span></h2>
       <br />
-      <p>El cliente "{client}", ha enviado una solicitud.</p>
+      <p>El cliente "<span style={{ fontWeight: 'bold', color: 'blue' }}>{client}</span>", ha enviado una solicitud.</p>
     </div>
   );
 }
-
 export default CrearPropInicio;

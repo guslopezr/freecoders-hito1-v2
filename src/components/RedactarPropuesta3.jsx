@@ -10,6 +10,12 @@ function RedactarPropuesta3() {
   const [hourValue, setHourValue] = useState("");
 
   const handleSave = () => {
+    if ( technologies.length === 0 || scope1.length === 0 || hours.length === 0 || revisions.length === 0 || value-length ===0 || hourValue === 0 || calculateValue.length === 0) {
+      alert("Por favor ingresa tecnologías adicionales, alcance y selecciona los valores asignados para horas, revisiones y valor de la hora");
+      return;
+    }
+
+
     const data = {
       technologies,
       scope1,
@@ -34,6 +40,8 @@ function RedactarPropuesta3() {
           className="my-textarea"
           placeholder="Tecnologías separadas por comas"
           value={technologies}
+          maxLength={50}
+          required
           onChange={(e) => setTechnologies(e.target.value)}
         />
       </div>
@@ -44,6 +52,7 @@ function RedactarPropuesta3() {
           className="my-textarea"
           placeholder="Alcances, límites, aspectos no contemplados en el servicio"
           value={scope1}
+          maxLength={100}
           onChange={(e) => setScope1(e.target.value)}
         />
       </div>
@@ -55,6 +64,7 @@ function RedactarPropuesta3() {
           type="number"
           placeholder="Revisiones"
           value={revisions}
+          required
           onChange={(e) => setRevisions(e.target.value)}
         />
       </div>
@@ -65,6 +75,7 @@ function RedactarPropuesta3() {
           type="number"
           placeholder="Horas de desarrollo"
           value={hours}
+          required
           onChange={(e) => setHours(e.target.value)}
         />
       </div>
@@ -76,6 +87,7 @@ function RedactarPropuesta3() {
           type="number"
           placeholder="Valor hora"
           value={hourValue}
+          required
           onChange={(e) => setHourValue(e.target.value)}
         />
       </div>

@@ -42,41 +42,32 @@ function ImportarDatosCliente() {
   };
 
   return (
-    <div className="maincontainer">
-      <h2>Descripción breve del proyecto</h2>
+    <div
+      className="maincontainer"
+      style={{ backgroundColor: "#f5f5f5", color: "#7d7d7d" }}
+    >
+      <div style={{ backgroundColor: "#f5f5f5", color: "#7d7d7d" }}>
+        <h3>Descripción breve del proyecto</h3>
+        <br />
+        <p className="my-paragraph maincontainer">{explanation}</p>
+      </div>
       <br />
-      <textarea
-        className="my-textarea"
-        value={explanation}
-        onChange={handleExplanationChange}
-       // style={{ width: "350px" }}
-      />
-      <br />
-      <br />
+
       <h3>Stack requerido</h3>
-      <textarea
-        className="my-textarea"
-        value={requiredStack}
-        onChange={handleRequiredStackChange}
-      />
-      <br />
+      <p className="my-paragraph maincontainer">{requiredStack}</p>
+
       <br />
       <h3>Comentarios del cliente</h3>
-      <textarea
-        className="my-textarea"
-        value={clientComments}
-        onChange={handleClientCommentsChange}
-      />
-      <br />
+
+      <p className="my-paragraph maincontainer">{clientComments}</p>
+
       <br />
       <h3>Enlace externo con documento de apoyo enviado por el cliente</h3>
       <br />
-      <input
-        className="my-textarea"
-        type="text"
-        value={externalLink}
-        onChange={handleExternalLinkChange}
-      />
+
+      <p className="my-paragraph maincontainer">
+    <a href={externalLink} target="_blank" rel="noopener noreferrer">{externalLink}</a>
+  </p>
     </div>
   );
 }

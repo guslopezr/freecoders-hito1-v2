@@ -31,8 +31,9 @@ function RedactarPropuesta1() {
             id="title"
             value={title}
             onChange={handleTitleChange}
-            placeholder="Ingresar acá el título del proyecto"
+            placeholder="Título del proyecto, tope de 50 caracteres"
             required
+            maxLength={50}
           />
         </div>
         <div>
@@ -49,6 +50,7 @@ function RedactarPropuesta1() {
                 onChange={handleDescriptionChange}
                 placeholder="Descripción detallada de aspectos funcionales"
                 required
+                maxLength={1000}
               />
             </div>
           </div>

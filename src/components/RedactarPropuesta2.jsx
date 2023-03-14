@@ -30,6 +30,12 @@ function RedactarPropuesta2() {
   };
 
   const handleSaveButtonClick = () => {
+    if (languages.length === 0 || databases.length === 0) {
+      alert("Please select at least one language and one database.");
+      return;
+    }
+
+
     // Save the selected data in browser memory here
     console.log("Selected Languages:", languages);
     console.log("Selected Frameworks:", frameworks);
@@ -49,6 +55,7 @@ function RedactarPropuesta2() {
           <select
             id="languages"
             multiple
+            required
             onChange={handleLanguagesChange}
             style={{ width: "300px" }}
           >

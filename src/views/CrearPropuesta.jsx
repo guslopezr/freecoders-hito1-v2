@@ -36,7 +36,7 @@ export default function CrearPropuesta() {
 
       <div className="text-center mt-4">
         <Button id='button-crearperfil' className="consolas-font" onClick={handleSaveClick} disabled={isSaving}>
-          {isSaving ? 'Saving...' : 'Guardar Cambios'}
+          {isSaving ? 'Saving...' : 'Enviar propuesta al cliente'}
         </Button>
       </div>
     </div>
