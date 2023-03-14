@@ -44,16 +44,34 @@ export default function AddSkills() {
   };
 
   const handleSaveLanguages = () => {
+
+    if (selectedLanguages.length === 0) {
+      alert("Por favor selecciona al menos un lenguaje de programación");
+      return;
+    }
     console.log(selectedLanguages);
     // Your code to save selected languages goes here
   };
 
   const handleSaveFrameworks = () => {
+    if (selectedFrameworks.length === 0) {
+      alert("Por favor selecciona al menos un Framework");
+      return;
+    }
+
     console.log(selectedFrameworks);
+
     // Your code to save selected frameworks goes here
   };
 
   const handleSaveDatabases = () => {
+
+    if (selectedDatabases.length === 0) {
+      alert("Por favor selecciona al menos una opción de bases de datos");
+      return;
+    }
+
+
     console.log(selectedDatabases);
     // Your code to save selected databases goes here
   };

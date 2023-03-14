@@ -3,6 +3,54 @@
 Se añade direccionamiento a /crearperil al hacer click en "registrarse".
 
 >>Formulario CrearPerfil: 
+
+1. Crear Datos Perfil
 Validación: Campo nombre y apellido no pueden estar vacíos
 Campo contraseña debe tener entre 4 y 10 caracteres
 Campo contraseña 2 debe ser igual a campo 1.
+Campo url de foto obligatorio 
+Se agrega campo edad como obligatorio
+Se agrega campo linkedin con Validación
+Se agrega campo area con validación y dropdown
+Se agrega campo de teléfono con validación
+Descripción de tu portafolio 
+
+2. Add Skills
+Se debe seleccionar al menos un langauje
+Se debe seleccionar al menos un framework
+Se debe seleccionar al menos una opción de base de datos
+
+3. Crear Portafolio: 
+Campo reseña obligatorio, mínimo 20 caracteres y máximo 500
+
+4. Crear Repo
+Campo tipo de repo y repo descripción obligatorios
+Minimo 20 caracteres y max 500
+
+5. Crear Ofeta Valor:
+Campo oferta de valor mandatorios
+Minimo 20 caracteres y max 500
+
+>>Contactar a Freecoder:
+Se agrega campo título de proyecto obligatorio
+Campo explicar proyecto obligatorio
+Se cambia el input del adjunto ejemplo por URL
+Datos de cliente se dejan obligatorios
+
+
+
+>>Mis solicitudes:
+Sin cambios de momento
+
+>>Perfil:
+Sin cambios
+
+
+
+
+
+
+
+
+
+

@@ -13,8 +13,12 @@ export default function CrearPortafolio() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(text);
-    // Your code to handle form submission goes here
+    if (text.length >= 20 && text.length <= 500) {
+      console.log(text);
+      // Your code to handle form submission goes here
+    } else {
+      alert("La reseña debe tener entre 20 y 500 caracteres.");
+    }
   };
 
   return (
@@ -30,8 +34,10 @@ export default function CrearPortafolio() {
               as="textarea"
               rows={3}
               maxLength={500}
+              required
               value={text}
               onChange={handleChange}
+              placeholder="La reseña debe tener entre 20 y 500 caracteres"
             />
           </div>
         </Form.Group>
@@ -43,3 +49,4 @@ export default function CrearPortafolio() {
     </div>
   );
 }
+

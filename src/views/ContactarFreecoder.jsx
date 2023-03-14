@@ -14,6 +14,7 @@ export default function ContactarFreecoder() {
   const [ProgramadorStack, setProgramadorStack] = useState([]);
   const [selectedFile, setSelectedFile] = useState(null);
   const [text, setText] = useState("");
+  const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [comments, setComments] = useState("");
 
@@ -81,6 +82,10 @@ export default function ContactarFreecoder() {
     localStorage.setItem("comments", comments);
   };
 
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value);
+  };
+
   const handleDescriptionChange = (event) => {
     setDescription(event.target.value);
   };
@@ -123,7 +128,24 @@ export default function ContactarFreecoder() {
 
           <div className="col-xl-9 col-md-8 col-sm-12">
             <div className="maincontainer">
-              <h3>Explica brevemente tu proyecto</h3>
+              <h3>Crea un título para tu proyecto</h3>
+              <form onSubmit={handleSubmit}>
+                <div>
+                  <textarea
+                    id="description"
+                    value={title}
+                    onChange={handleTitleChange}
+                    placeholder="Título para tu proyecto"
+                    required
+                    maxLength={50}
+                  />
+                  <br />
+                  {title.length === 0 && <span style={{ color: 'red' }} >Este campo es requerido</span>}
+                </div>
+              </form>
+              <br />
+              <h4>Describe brevemente tu proyecto</h4>
+
               <form onSubmit={handleSubmit}>
                 <div>
                   <textarea
@@ -132,18 +154,23 @@ export default function ContactarFreecoder() {
                     onChange={handleDescriptionChange}
                     placeholder="Descripción detallada de aspectos funcionales"
                     required
+                    maxLength={1000}
                   />
+                  <br />
+                  {description.length === 0 && <span style={{ color: 'red' }}>Este campo es requerido</span>}
+
                 </div>
-                <button type="submit" onClick={handleSaveButtonClick}>
-                  Guardar
-                </button>
               </form>
+              <button type="submit" onClick={handleSaveButtonClick}>
+                Guardar
+              </button>
             </div>
+            
 
             <div className="maincontainer">
               <div className="stack-orden">
                 <h3 className="stack-titulo">Elige el stack requerido:</h3>
-                <Form className="maincontainer-tecs">
+                <Form>
                   {[
                     "Python",
                     "JavaScript",
@@ -190,7 +217,7 @@ export default function ContactarFreecoder() {
               </div>
               <br />
               <div className="stack-comentarios">
-                <h4>¿No encontraste lo que buscabas? Agregalo acá:</h4>
+                <h4>¿No encontraste lo que buscabas? Agrégalo acá:</h4>
                 <br />
                 <form className="form-texto" onSubmit={handleSubmitComments}>
                   <div>
@@ -227,6 +254,7 @@ export default function ContactarFreecoder() {
                 <Form.Control
                   as="textarea"
                   rows={3}
+                  required
                   maxLength={500}
                   value={text}
                   onChange={handleChange}
@@ -249,18 +277,30 @@ export default function ContactarFreecoder() {
                 style={{ backgroundColor: "#E4E4E4" }}
               >
                 <div className="maincontainer">
-                  <h4> ¿Tienes una imagen o boceto de tu proyecto o idea?</h4>
+                  <h3> ¿Tienes una imagen o boceto de tu proyecto o idea?</h3>
+                  <br />
+                  <p>
+                    Opcionalmente, puedes subir un enlace a un repositorio con
+                    un archivo de referencia
+                  </p>
                   <br />
                   <label>
                     <input
-                      type="file"
-                      accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
+                      type="url"
                       onChange={handleFileChange}
-                      placeholder="sube tu idea aca de manera opcional"
+                      placeholder="www.ejemplo.png"
+                      required
                     />
                   </label>
                 </div>
-                <p>{selectedFile ? selectedFile.name : "Archivo no subido"}</p>
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="button-guardar"
+                  onClick={handleSaveButtonClick}
+                >
+                  Guardar
+                </Button>
               </div>
             </div>
 
@@ -271,23 +311,36 @@ export default function ContactarFreecoder() {
               <br />
               <Form.Group controlId="formName">
                 <Form.Label>Nombre</Form.Label>
-                <Form.Control type="text" placeholder="Agregar nombre" />
+                <Form.Control
+                  type="text"
+                  required
+                  placeholder="Agregar nombre"
+                />
               </Form.Group>
 
               <Form.Group controlId="formLastName">
                 <Form.Label>Apellido</Form.Label>
-                <Form.Control type="text" placeholder="Agregar apellido" />
+                <Form.Control
+                  type="text"
+                  required
+                  placeholder="Agregar apellido"
+                />
               </Form.Group>
 
               <Form.Group controlId="formEmail">
                 <Form.Label>Dirección de correo electrónico</Form.Label>
-                <Form.Control type="email" placeholder="Ingresar correo" />
+                <Form.Control
+                  type="email"
+                  required
+                  placeholder="Ingresar correo"
+                />
               </Form.Group>
               <Form.Group controlId="formTelefono">
                 <Form.Label>Numero telefónico</Form.Label>
                 <div>
                   <Form.Control
                     type="number"
+                    required
                     placeholder="Ingresar numero telefonico"
                     style={{ width: "300px", borderColor: "#dcdcdc" }}
                   />

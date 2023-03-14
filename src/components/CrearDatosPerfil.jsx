@@ -8,6 +8,7 @@ export default function CrearDatosPerfil() {
   const [rate, setRate] = useState(10000);
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  //  const [confirmUrl, setConfirmUrl] = useState("");
 
   const handleRateChange = (event) => {
     setRate(event.target.value);
@@ -68,6 +69,69 @@ export default function CrearDatosPerfil() {
             aria-label="Campo obligatorio: Dirección de correo electrónico"
           />
         </Form.Group>
+
+        <br />
+        <Form.Group controlId="formPhone">
+          <Form.Label>Ingresa tu número de teléfono celular</Form.Label>
+          <Form.Control
+            type="tel"
+            placeholder="Formato 5612345678"
+            required
+            pattern="[00-9]{8,14}"
+            aria-label="Campo obligatorio: Teléfono"
+          />
+        </Form.Group>
+
+        <br />
+        <Form noValidate>
+          <Form.Group controlId="formAge">
+            <Form.Label>Edad</Form.Label>
+            <br />
+            <Form.Control
+              type="number"
+              placeholder="Ingresa tu edad"
+              required
+              aria-label="Campo obligatorio: Edad"
+            />
+          </Form.Group>
+        </Form>
+        <br />
+
+        <Form.Group controlId="formUrl">
+          <Form.Label>Ingresa una URL para mostrar foto de perfil</Form.Label>
+          <br />
+          <Form.Control
+            type="url"
+            placeholder="URL foto perfil"
+            required
+            aria-label="Campo obligatorio: URL"
+          />
+        </Form.Group>
+        <br />
+
+        <Form.Group controlId="formUrl">
+          <Form.Label>Perfil de Linkedin</Form.Label>
+          <br />
+          <Form.Control
+            type="url"
+            placeholder="URL de Linkedin"
+            required
+            aria-label="Campo obligatorio: URL"
+          />
+        </Form.Group>
+        <br />
+        <br />
+        <Form.Group controlId="formUrl">
+          <Form.Label>Área de especialidad</Form.Label>
+          <br />
+          <Form.Select required aria-label="Campo obligatorio: Especialidad">
+            <option value="">Seleccione una opción</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="Fullstack">Fullstack</option>
+          </Form.Select>
+        </Form.Group>
+        <br />
 
         <Form.Group controlId="formPassword">
           <Form.Label>Contraseña</Form.Label>
