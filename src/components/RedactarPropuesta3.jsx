@@ -3,23 +3,20 @@ import { useState } from "react";
 function RedactarPropuesta3() {
   const [technologies, setTechnologies] = useState("");
   const [scope1, setScope1] = useState("");
-  //  const [scope2] = useState("");
   const [hours, setHours] = useState("");
   const [revisions, setRevisions] = useState("");
   const [value, setValue] = useState("");
   const [hourValue, setHourValue] = useState("");
 
   const handleSave = () => {
-    if ( technologies.length === 0 || scope1.length === 0 || hours.length === 0 || revisions.length === 0 || value-length ===0 || hourValue === 0 || calculateValue.length === 0) {
-      alert("Por favor ingresa tecnologías adicionales, alcance y selecciona los valores asignados para horas, revisiones y valor de la hora");
+    if (!technologies || !scope1 || !revisions || !hours || !hourValue || !value) {
+      alert("Por favor completa todos los campos antes de guardar.");
       return;
     }
-
 
     const data = {
       technologies,
       scope1,
-      //      scope2,
       hours,
       revisions,
       value,
@@ -50,7 +47,7 @@ function RedactarPropuesta3() {
         <h3>Alcance</h3>
         <textarea
           className="my-textarea"
-          placeholder="Alcances, límites, aspectos no contemplados en el servicio"
+          placeholder="Alcances, límites, aspectos no contemplados en el servicio.Ejemplo: No incluye hosting."
           value={scope1}
           maxLength={100}
           onChange={(e) => setScope1(e.target.value)}
