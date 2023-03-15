@@ -15,12 +15,9 @@ import Seguimiento from "./views/Seguimiento"
 import EnvioPropuesta from "./views/EnvioPropuesta"
 import Navegacion from './components/Navegacion'
 
-
 const App = () => {
-
   return (
     <div className="container">
-           
       <States>
         <BrowserRouter>     
           <Routes>
