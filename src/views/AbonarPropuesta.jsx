@@ -6,35 +6,46 @@ import NavBar from "../components/NavBar";
 import Navegacion from "../components/Navegacion";
 
 export default function AbonarPropuesta() {
-  const [isSaving, setIsSaving] = useState(false);
+const [isSaving, setIsSaving] = useState(false);
+const [responseMessage, setResponseMessage] = useState("");
 
-  const handleSaveClick = () => {
-    setIsSaving(true);
-    // Save all changes here
-    setTimeout(() => {
-      setIsSaving(false);
-    }, 2000); // simulate save operation with a 2 second delay
-  };
+const handleSaveClick = () => {
+setIsSaving(true);
+// Save all changes here
+setTimeout(() => {
+setIsSaving(false);
+setResponseMessage("Tu abono ha sido recibido, el Freecoder comenzará el trabajo");
+}, 2000); // simulate save operation with a 2 second delay
+};
 
-  return (
-    <div className="maincontainer">
-      <Navegacion />
-      {/*         <NavBar />
-       */}
+return (
+<div className="maincontainer">
+<Navegacion />
+{/* <NavBar /> */}
 
-      <div className="maincontainer">{<AbonarPropuesta1 />}</div>
-      <div className="maincontainer">{<AbonarPropuesta2 />}</div>
 
-      <div className="maincontainer text-center mt-4">
-        <Button
-          id="button-crearperfil"
-          className="consolas-font"
-          onClick={handleSaveClick}
-          disabled={isSaving}
-        >
-          {isSaving ? "Guardando..." : "Enviar Abono"}
-        </Button>
+  <div className="maincontainer">{<AbonarPropuesta1 />}</div>
+  <div className="maincontainer">{<AbonarPropuesta2 setShowMessage={setResponseMessage} />}</div>
+  {/* Pass setShowMessage function as a prop to AbonarPropuesta2 component */}
+
+  <div className="maincontainer text-center mt-4">
+    <Button
+      id="button-crearperfil"
+      className="consolas-font"
+      onClick={handleSaveClick}
+      disabled={isSaving}
+    >
+      {isSaving ? "Guardando..." : "Enviar Abono"}
+    </Button>
+    {responseMessage && (
+      <div style={{ backgroundColor: "#e4e4e4", padding: "15px", textAlign: "center" }}>
+        {responseMessage === "Tu abono ha sido recibido, el Freecoder comenzará el trabajo" && (
+          <h3 style={{ fontWeight: "bold", color: "blue" }}>{responseMessage}</h3>
+        )}
+        {/* Display response message only if it matches the condition */}
       </div>
-    </div>
-  );
+    )}
+  </div>
+</div>
+);
 }
